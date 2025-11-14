@@ -1,6 +1,6 @@
 <?php include("includes/header.php"); 
 
-$idveiculo = $_POST['idveiculo'];
+$idveiculo = $_POST['idveiculo'] ?? null;
 
 try {
     $sql = "select * from veiculo where idveiculo = :idveiculo";
@@ -10,6 +10,7 @@ try {
 }catch(PDOException $e){
     echo 'Erro: '. $e->getMessage();
 }
+
 $tipo = $veiculo['tipo']??'';
 $placa = $veiculo['placa']??'';
 $ano  = $veiculo['ano']??'';
@@ -20,8 +21,6 @@ $data_ultimamanutencao  = $veiculo['data_ultimamanutencao']??'';
 $intervalo_manutencao  = $veiculo['intervalo_manutencao']??'';
 
 $url_action = $idveiculo ? 'actions/veiculo_alterar.php': 'actions/veiculo_gravar.php';
-
-
 
 ?>    
 
@@ -66,7 +65,7 @@ $url_action = $idveiculo ? 'actions/veiculo_alterar.php': 'actions/veiculo_grava
     <input name="intervalo_manutencao" type="text" placeholder="Escreva em dias"><br>
 
     <input type="submit" value="Gravar">
-    <input type="button" value="Cancelar" onclick="window.location('veiculos.php')">
+    <input type="button" value="Cancelar" onclick="window.location.href='veiculos.php'">
 
 </form>
 

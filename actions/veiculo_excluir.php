@@ -5,7 +5,7 @@ include_once '../config/conexao.php';
 $idveiculo=$_POST['idveiculo'];
 
 try{
-  $sql = "DELETE From veiculo where idveiculo = idveiculo";
+  $sql = "DELETE From veiculo where idveiculo = :idveiculo";
 
   $stmt = $conn->prepare($sql);
   $stmt->execute([

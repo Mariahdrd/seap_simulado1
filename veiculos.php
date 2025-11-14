@@ -2,7 +2,7 @@
 
 <h1>Veículos</h1>
 
-<button onclick="window.location.href='veiculo_formulario.php'">Novo Veículo</button>
+<button onclick="window.location.href='veiculo_cadastro.php'">Novo Veículo</button>
 
 <?php
 try {
